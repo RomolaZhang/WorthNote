@@ -1,0 +1,24 @@
+.Job {
+  margin: 0 3vw;
+  padding: 1vh 2vw 2vh 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Job:hover {
+  transform: scale(1.02);
+  transition: 0.2s;
+  box-shadow: 0px 1px 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.job-image {
+  width: 13vw;
+}
+
+.job-title {
+  font-size: 16px;
+  font-family: yh;
+  color: #555555;
+}
