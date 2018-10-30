@@ -27,6 +27,8 @@ body {
 .App {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
+  position: fixed;
 }
 
 .h-container {
@@ -86,6 +88,7 @@ body {
   right: 4vw;
   display: flex;
   align-items: center;
+  z-index: 70;
 }
 
 #list {
@@ -96,6 +99,7 @@ body {
   transition: 0.7s;
   visibility: hidden;
   opacity: 0;
+  z-index: -1;
 }
 
 .top {
@@ -116,6 +120,7 @@ body {
   opacity: 1;
   transition: 0.7s;
   visibility: visible;
+  display: flex;
 }
 
 @keyframes rotate {
@@ -228,6 +233,7 @@ body {
   position: absolute;
   top: 0;
   position: fixed;
+  overflow: hidden;
 }
 
 .page1 {
@@ -236,11 +242,14 @@ body {
 
 .focus {
   visibility: visible;
-  animation: show 0.8s 0.8s 1 forwards;
+  display: flex;
+  animation: show 0.5s 0.5s 1 forwards;
+  z-index: 50;
 }
 
 .unfocus {
-  animation: hide 0.8s 1 forwards;
+  animation: hide 0.5s 1 forwards;
+  z-index: 20;
 }
 
 .footnote {
@@ -283,10 +292,12 @@ body {
   99% {
     visibility: visible;
     opacity: 0;
+    display: none;
   }
   100% {
     visibility: hidden;
     opacity: 0;
+    display: none;
   }
 }
 
@@ -345,18 +356,18 @@ body {
 /* join page */
 
 .text.chi.join {
-  margin-top: 5vh;
+  margin-top: 7vh;
 }
 
 .j-sub {
   font-family: yh;
   font-size: 13px;
   color: #555555;
-  margin-top: 5vh;
+  margin-top: 8vh;
 }
 
 .j-email {
-  margin-top: 8vh;
+  margin-top: 10vh;
   font-family: fz;
   font-size: 18px;
   color: #555555;
@@ -408,9 +419,9 @@ p {
   position: absolute;
   z-index: 200;
   width: 85vw;
-  height: 100vh;
+  height: 90vh;
   left: 7.5vw;
-  top: 0;
+  top: 5vh;
   background-color: white;
   display: none;
   transition: 1s;
@@ -443,8 +454,9 @@ p {
 .job-detail {
   font-family: yh;
   color: #555555;
+  font-size: 14px;
   margin-bottom: 10px;
-  line-height: 22px;
+  line-height: 20px;
 }
 
 .shadow {
@@ -468,8 +480,8 @@ p {
   height: 35px;
   cursor: pointer;
   position: absolute;
-  right: 6vw;
-  top: 8vh;
+  right: 5vw;
+  top: 5vh;
 }
 
 /* contact page */
@@ -480,54 +492,155 @@ p {
   align-items: center;
 }
 
+.c-content {
+  position: absolute;
+  bottom: 17vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.c-bottom {
+  font-family: fz;
+  font-size: 16px;
+  color: #555555;
+  margin-top: 7vh;
+}
+
+.c-email {
+  font-family: fz;
+  font-size: 18px;
+  color: #555555;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10vh;
+}
+
+.map {
+  margin-top: 0;
+  width: 100vw;
+}
+
+.dot {
+  position: absolute;
+  background-color: #3696c7;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: none;
+}
+
+#dot1 {
+  top: 32.3%;
+  left: 8.6%;
+  animation: shine 2s infinite;
+}
+
+#dot2 {
+  top: 27.5%;
+  left: 20%;
+  animation: shine 2s 0.5s infinite;
+}
+
+#dot3 {
+  top: 34%;
+  left: 18%;
+  animation: shine 2s 1s infinite;
+}
+
+#dot4 {
+  top: 25.2%;
+  left: 47.5%;
+  animation: shine 2s 1.5s infinite;
+}
+
+#dot5 {
+  top: 24.3%;
+  left: 44.3%;
+  animation: shine 2s infinite;
+}
+
+#dot6 {
+  top: 27.5%;
+  left: 45%;
+  animation: shine 2s 0.5s infinite;
+}
+
+#dot7 {
+  top: 34%;
+  left: 80%;
+  width: 18px;
+  height: 18px;
+  animation: shine 2s 1s infinite;
+}
+
+#dot8 {
+  top: 38%;
+  left: 83.3%;
+  width: 18px;
+  height: 18px;
+  animation: shine 2s 1.5s infinite;
+}
+
+#dot9 {
+  top: 84.7%;
+  left: 90.8%;
+  animation: shine 2s infinite;
+}
+
+#dot10 {
+  top: 78%;
+  left: 94%;
+  animation: shine 2s 0.5s infinite;
+}
+
+@keyframes shine {
+  0% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+}
+
 .c-top {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-left: 3vw;
-  margin-bottom: 8vh;
+  margin-bottom: 2vh;
   padding-top: 2vh;
+  margin-top: 5vh;
 }
 
 .c-right {
-  color: #3696c7;
+  color: #555555;
   font-family: yh;
-  font-size: 20px;
-  letter-spacing: 1px;
+  font-size: 14px;
 }
 
 .c.email {
   font-size: 26px;
-  margin-top: 8vh;
+  margin-top: 2vh;
 }
 
 .c-left {
   margin-right: 4vw;
-}
-
-.c-left-title {
-  font-family: fz;
-  font-size: 58px;
+  font-size: 42px;
   color: #3696c7;
-  margin-bottom: 5px;
+  font-family: fz;
   font-weight: 900;
 }
 
-.c-left-sub {
-  font-family: fz;
-  color: #3696c7;
-  font-size: 29px;
-}
 .c-right-s {
-  padding-bottom: 10px;
-}
-
-.c-bottom {
-  color: #3696c7;
-  font-family: yh;
-  font-size: 20px;
-  letter-spacing: 1.2px;
-  margin-bottom: 2vh;
+  padding-bottom: 8px;
 }
 
 /* article page */
@@ -589,7 +702,7 @@ p {
 
   #qr {
     left: 40vw;
-    top: 62vh;
+    top: 60vh;
     width: 20vw;
   }
 
@@ -652,6 +765,7 @@ p {
     margin-top: 12vh;
     margin-bottom: 2vh;
     align-items: center;
+    height: 6vh;
   }
 
   .text.chi.article {
@@ -673,6 +787,7 @@ p {
 
   #articles {
     width: 100vw;
+    height: 80vh;
   }
 
   .top {
@@ -708,9 +823,71 @@ p {
 
   /* join page */
 
+  .text.chi.join {
+    font-size: 20px;
+    margin-top: 8vh;
+  }
+
+  .j-sub {
+    margin-top: 3vh;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .jobs {
+    flex-wrap: wrap;
+    margin-top: 3vh;
+    justify-content: space-around;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .j-email {
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+  }
+
+  .job-detail-page {
+    top: 10vh;
+    height: 85vh;
+    overflow-y: auto;
+  }
+
+  .close {
+    width: 25px;
+    height: 25px;
+    top: 13vh;
+    right: 13vw;
+    position: fixed;
+  }
+
+  .detail-title {
+    margin-top: 6vh;
+    font-size: 22px;
+  }
+
+  .job-detail-title {
+    font-size: 18px;
+    margin-top: 5vh;
+  }
+
+  .job-details {
+    margin-top: 3vh;
+  }
+
+  .job-detail {
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 8px;
+  }
+
+  p {
+    margin-bottom: 5px;
+    text-align: left;
+  }
   .container {
-    margin-left: 13%;
-    width: 74%;
+    margin-left: 7%;
+    width: 86%;
     height: 100%;
     align-items: center;
     justify-content: center;
@@ -722,33 +899,41 @@ p {
 
   /* contact page */
   .c-container {
-    width: 84%;
-    margin-left: 8%;
-    margin-top: 20vh;
+    height: 100vh;
+  }
+
+  .c-top {
+    flex-direction: column;
+    width: 85vw;
+    margin-bottom: 12vh;
+  }
+
+  .map {
+    display: none;
   }
 
   .c-right {
-    font-size: 16px;
-    width: 56vw;
+    font-size: 13px;
+  }
+
+  .c-right-s {
+    text-align: center;
+    margin-bottom: 7px;
   }
 
   .c-left {
-    margin-right: 5vw;
+    margin-bottom: 5vh;
+    font-size: 36px;
   }
 
-  .c-left-title {
-    font-size: 32px;
-  }
-
-  .c-left-sub {
-    font-size: 16px;
-  }
-
-  .c-bottom {
+  .c-email {
     font-size: 14px;
+    margin-bottom: 10vh;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
   }
-
-  .c.email {
-    font-size: 20px;
+  .c-email-label {
+    margin-bottom: 10px;
   }
 }

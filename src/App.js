@@ -17,6 +17,7 @@ import Job from "./Job";
 import Qrcode from "./assets/qrcode.png";
 import Menu from "./assets/menu.png";
 import Top from "./assets/top.png";
+import Map from "./assets/map.gif";
 import Close from "./assets/close.png";
 import Job1 from "./assets/job1.png";
 import Job2 from "./assets/job2.png";
@@ -26,9 +27,16 @@ import Gan01 from "./assets/干货01.jpeg";
 import Gan02 from "./assets/干货02.jpeg";
 import Gan03 from "./assets/干货03.jpeg";
 import Gan04 from "./assets/干货04.jpeg";
+import Gan05 from "./assets/干货05.jpeg";
+import Gan06 from "./assets/干货06.jpeg";
 import Dui01 from "./assets/对话01.jpeg";
 import Dui02 from "./assets/对话02.jpeg";
+import Dui03 from "./assets/对话03.jpeg";
 import You01 from "./assets/有趣01.jpeg";
+import You02 from "./assets/有趣02.jpeg";
+import You03 from "./assets/有趣03.jpeg";
+import You04 from "./assets/有趣04.jpeg";
+import You05 from "./assets/有趣05.jpeg";
 
 class App extends Component {
   constructor(props) {
@@ -44,6 +52,7 @@ class App extends Component {
     this.deletingEffect = this.deletingEffect.bind(this);
     this.selectJob = this.selectJob.bind(this);
     this.hideDetail = this.hideDetail.bind(this);
+    this.closemenu = this.closemenu.bind(this);
 
     this.refs = React.createRef();
 
@@ -124,7 +133,7 @@ class App extends Component {
           req: [
             "1.三年以上互联网工作经验，在内容信息流推荐方面有实践经验",
             "2.对推荐系统常见算法和相关业务有深刻了解，在以下场景和领域有丰富经验：机器学习平台（包括参数服务器、分布式训练框架等），推荐场景（召回策略、用户和文章的冷启动策略、用户和文章特征工程、内容生态",
-            "3.熟悉常用数据结构，具备扎实的算法基本功，熟悉C++、Python、go等编程语言",
+            "3.熟悉常用数据结构，具备扎实的算法基本功，熟悉C++、Python、Go等编程语言",
             "4.具备良好的业务理解能力和逻辑思维能力，能够从海量数据中发现关键特征，具备出色的问题分析及解决能力",
             "5.有强烈的上进心和求知欲，产品问题驱动导向",
             "6.具备良好的沟通能力与团队合作精神"
@@ -142,6 +151,16 @@ class App extends Component {
         }
       ],
       ganArticles: [
+        {
+          heading: "留学必备干货 | 留学费用之英国篇",
+          src: Gan05,
+          link: "https://mp.weixin.qq.com/s/6r_QcjylbDCw-P9J9HSRqA"
+        },
+        {
+          heading: "留学必备干货丨英国贴心生活指南",
+          src: Gan06,
+          link: "https://mp.weixin.qq.com/s/ixxGuiuLJQipvMXl0Fji2g"
+        },
         {
           heading: "留学必备干货丨英美澳住房指南",
           src: Gan01,
@@ -165,6 +184,11 @@ class App extends Component {
       ],
       duiArticles: [
         {
+          heading: "对话周楠：转专业申请，爱与痛边缘的选择",
+          src: Dui03,
+          link: "https://mp.weixin.qq.com/s/ZFHb11_6W6cTCo2FXUP0dg"
+        },
+        {
           heading: "对话梁露：如何高效求职进入英国互联网公司？",
           src: Dui01,
           link: "https://mp.weixin.qq.com/s/ScTBFg-7hGkIuDPsU3LeaQ"
@@ -176,6 +200,26 @@ class App extends Component {
         }
       ],
       youArticles: [
+        {
+          heading: "我不想死，我想活着，行吗？",
+          src: You04,
+          link: "https://mp.weixin.qq.com/s/ZK_8qwA6CEB0Uk-o3m2Stg"
+        },
+        {
+          heading: "去英国那么多次，第一次看到这样别出心裁的“游客照”",
+          src: You03,
+          link: "https://mp.weixin.qq.com/s/-y2XIp6ycGvbZcDbb8Wl1A"
+        },
+        {
+          heading: "全球青年生存图鉴",
+          src: You02,
+          link: "https://mp.weixin.qq.com/s/xSiokqolrqwtPlevZM-03w"
+        },
+        {
+          heading: "德国一家四口在南京惨遭灭门后，结局让中国人难以理解",
+          src: You05,
+          link: "https://mp.weixin.qq.com/s/DllkcWHEGLhuNd5x4Ysg5Q"
+        },
         {
           heading: "英国最好吃的菜就是外国菜",
           src: You01,
@@ -217,6 +261,12 @@ class App extends Component {
     });
   }
 
+  closemenu() {
+    this.setState({
+      menuopen: false
+    });
+  }
+
   switchTab(clicked) {
     if (clicked !== this.state.tab) {
       this.setState({
@@ -240,7 +290,7 @@ class App extends Component {
         window.hideqr();
       }
     }
-    this.openmenu();
+    this.closemenu();
   }
 
   selectJob(selected) {
@@ -428,6 +478,9 @@ class App extends Component {
             </div>
           </div>
           <img id="qr" className={qrcode} src={Qrcode} />
+          <div className="text chi footnote">
+            必览 @2018 All rights reserved. 沪ICP备18027968号
+          </div>
         </div>
         <div className={this.state.classes.about + "page"}>
           <div className="about-container">
@@ -477,29 +530,43 @@ class App extends Component {
         </div>
         <div className={this.state.classes.contact + "page"}>
           <div className="c-container">
-            <div className="c-top">
-              <div className="c-left">
-                <div className="c-left-title">必览</div>
-                <div className="c-left-sub">商务合作</div>
-              </div>
-              <div className="c-right">
-                <div className="c-right-s">
-                  致力于与留学及海外本地生活领域的商家通力合作，
+            <img className="map" src={Map} />
+            <div className="dot" id="dot1" />
+            <div className="dot" id="dot2" />
+            <div className="dot" id="dot3" />
+            <div className="dot" id="dot4" />
+            <div className="dot" id="dot5" />
+            <div className="dot" id="dot6" />
+            <div className="dot" id="dot7" />
+            <div className="dot" id="dot8" />
+            <div className="dot" id="dot9" />
+            <div className="dot" id="dot10" />
+            <div className="c-content">
+              <div className="c-top">
+                <div className="c-left">商务合作</div>
+                <div className="c-right">
+                  <div className="c-right-s">
+                    致力于与留学及海外本地生活领域的商家通力合作，
+                  </div>
+                  <div className="c-right-s">
+                    通过内容、工具与产品多维度赋能全球合作伙伴，
+                  </div>
+                  <div className="c-right-s">
+                    精准触达用户，从全链条提供更优质的服务！
+                  </div>
                 </div>
-                <div className="c-right-s">
-                  通过内容、工具与产品多维度赋能全球合作伙伴，
-                </div>
-                <div>精准触达用户，从全链条提供更优质的服务！</div>
               </div>
-            </div>
-            <div className="c-bottom">
-              留学 | 语培 | 外卖 | 二手 | 中超 | 海外酒旅
-            </div>
-            <div className="j-email">
-              <span>与必览团队进行商务合作，请联系</span>
-              <a href="mailto:market@viewer.ink" className="email join">
-                market@viewer.ink
-              </a>
+              <div className="c-bottom">
+                留学 | 语培 | 外卖 | 二手 | 中超 | 海外酒旅
+              </div>
+              <div className="c-email">
+                <span className="c-email-label">
+                  与必览团队进行商务合作，请联系
+                </span>
+                <a href="mailto:market@viewer.ink" className="email join">
+                  market@viewer.ink
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -537,9 +604,6 @@ class App extends Component {
             onClick={this.openmenu}
             src={Menu}
           />
-        </div>
-        <div className="text chi footnote">
-          必览 @2018 All rights reserved. 沪ICP备18027968号
         </div>
       </div>
     );

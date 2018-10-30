@@ -22,3 +22,17 @@
   font-family: yh;
   color: #555555;
 }
+
+@media (max-width: 500px) {
+  .job-image {
+    width: 23vw;
+  }
+
+  .job-title {
+    font-size: 13px;
+  }
+
+  .Job {
+    width: 30vw;
+  }
+}
