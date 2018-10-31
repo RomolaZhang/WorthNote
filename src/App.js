@@ -531,16 +531,6 @@ class App extends Component {
         <div className={this.state.classes.contact + "page"}>
           <div className="c-container">
             <img className="map" src={Map} />
-            <div className="dot" id="dot1" />
-            <div className="dot" id="dot2" />
-            <div className="dot" id="dot3" />
-            <div className="dot" id="dot4" />
-            <div className="dot" id="dot5" />
-            <div className="dot" id="dot6" />
-            <div className="dot" id="dot7" />
-            <div className="dot" id="dot8" />
-            <div className="dot" id="dot9" />
-            <div className="dot" id="dot10" />
             <div className="c-content">
               <div className="c-top">
                 <div className="c-left">商务合作</div>
